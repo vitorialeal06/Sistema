@@ -29,7 +29,7 @@
                                 </div>
                             {% endif %}
 
-                            <form action="{% url 'listar-veiculos' %}" method="GET" novalidate>
+                            <form action="{% url 'login' %}" method="POST" novalidate>
                                 {% csrf_token %}
 
                                 <div class="mb-4">
