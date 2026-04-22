@@ -1,7 +1,7 @@
 from django.http import FileResponse, Http404
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DeleteView, ListView, UpdateView
+from django.views.generic import CreateView, DeleteView, ListView, UpdateView, View
 from veiculo.models import Veiculo
 from veiculo.forms import FormularioVeiculo
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -49,7 +49,7 @@ class FotoVeiculo(LoginRequiredMixin,ListView):
         Método GET para retornar a foto do veículo.
         """
         try:
-            veiculo = Veiculo.objects.get(foto='veiculo/fotos/{}.format(arquivo)')
+            veiculo = get_object_or_404(Veiculo, foto=arquivo)
             return FileResponse(veiculo.foto)
         except Veiculo.DoesNotExist:
             raise Http404("Foto do veículo não encontrada.")

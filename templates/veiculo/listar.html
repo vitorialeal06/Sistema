@@ -17,8 +17,8 @@
                         <button class="btn btn-secondary rounded-pill ms-2 px-4" type="submit">
                             <i class="bi bi-search"></i> Buscar
                         </button>
-                        <div class="col-md-3 col-lg-2 mt-md-0 mt-3 text-end">
-                            <a href="{% url 'criar-veiculo' %}" class="btn btn-success rounded-pill px-4 shadow-sm w-100">
+                        <div class="col-md-3 col-lg-2 mt-md-0 mt-2">
+                            <a href="{% url 'criar-veiculo' %}" class="btn btn-success rounded-pill ">
                                 <i class="bi bi-plus-lg"></i> Novo
                             </a>
                         </div>
@@ -34,7 +34,7 @@
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm">
                     {% if veiculo.foto %}
-                        <img src="{{ veiculo.foto.url }}" class="card-img-top" alt="{{ veiculo.modelo }}" style="height: 200px; object-fit: cover;">
+                        <img src="{% url 'foto-veiculo' arquivo=veiculo.foto.name %}" class="card-img-top" alt="{{ veiculo.modelo }}" style="height: 200px; object-fit: cover;">
                     {% else %}
                         <div class="bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
                             <span class="text-muted small">Sem imagem disponível</span>
