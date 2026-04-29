@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'veiculo.apps.VeiculoConfig',
+    'anuncio.apps.AnuncioConfig',
 ]
 
 MIDDLEWARE = [
@@ -117,12 +118,5 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [BASE_DIR/'sistema'/'static']
-
-# O prefixo que aparecerá na URL (ex: http://127.0.0.1:8000/media/...)
-#MEDIA_URL = '/media/'
-
-# O caminho físico na sua máquina (Pasta 'media' na raiz do projeto)
-#MEDIA_ROOT = BASE_DIR / 'media'
-
 
 LOGIN_URL = '/'
